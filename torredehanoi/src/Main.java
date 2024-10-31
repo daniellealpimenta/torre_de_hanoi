@@ -82,7 +82,7 @@ public class Main {
             }
 
             // Verificação de condição de vitória
-            ganhou = pilha1.isEmpty() && pilha2.isEmpty() && pilha3.size() == 3;1
+            ganhou = pilha1.isEmpty() && pilha2.isEmpty() && pilha3.size() == 3;
             if (ganhou) {
                 System.out.println("Parabéns, você ganhou!");
                 pilhas.desenharPilha(pilha1,pilha2,pilha3);
