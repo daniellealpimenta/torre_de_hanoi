@@ -5,10 +5,13 @@ public class Main {
     public static void main(String[] args) {
 
         boolean ganhou = false;
+        int movimentos = 0;
 
         Disco disco1 = new Disco(1);
         Disco disco2 = new Disco(2);
         Disco disco3 = new Disco(3);
+        Disco disco4 = new Disco(4);
+        Disco disco5 = new Disco(5);
 
         Pilhas pilhas = new Pilhas();
 
@@ -17,6 +20,8 @@ public class Main {
         Stack<Integer> pilha3 = new Stack<>();
 
         // Adicionando discos na pilha inicial
+        pilhas.adicionarDiscos(disco5, pilha1);
+        pilhas.adicionarDiscos(disco4, pilha1);
         pilhas.adicionarDiscos(disco3, pilha1);
         pilhas.adicionarDiscos(disco2, pilha1);
         pilhas.adicionarDiscos(disco1, pilha1);
@@ -79,15 +84,16 @@ public class Main {
                 // Remove o disco do topo da pilha de origem e o coloca na pilha de destino
                 pilhaOrigem.pop();
                 pilhaDestino.push(discoTopo);
+                movimentos++;
             }
 
             // Verificação de condição de vitória
-            ganhou = pilha1.isEmpty() && pilha2.isEmpty() && pilha3.size() == 3;
+            ganhou = pilha1.isEmpty() && pilha2.isEmpty() && pilha3.size() >= 2;
             if (ganhou) {
-                System.out.println("Parabéns, você ganhou!");
+                System.out.println("Parabéns, você ganhou em: " + movimentos + " movimentos");
                 pilhas.desenharPilha(pilha1,pilha2,pilha3);
             }
         }
-        ler.close(); // Fecha o Scanner
+        ler.close();
     }
 }

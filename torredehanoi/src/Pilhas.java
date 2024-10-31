@@ -23,19 +23,6 @@ public class Pilhas {
         }
     }
 
-    public void removerDiscos(Disco disco, Stack<Integer> pilha, Stack<Integer> pilha2) {
-        temDisco = pilhaVazia(pilha);
-        if (!temDisco) {
-            pilha.pop();
-            adicionarDiscos(disco, pilha2);
-            if (!trocaDeuCerto){
-                adicionarDiscos(disco, pilha);
-            }
-        } else {
-            System.out.println("Não tem disco nessa pilha");
-        }
-    }
-
     public void desenharPilha(Stack<Integer> pilha1, Stack<Integer> pilha2, Stack<Integer> pilha3) {
         // Encontrar a altura máxima entre as pilhas para definir o número de linhas
         int alturaMaxima = Math.max(pilha1.size(), Math.max(pilha2.size(), pilha3.size()));
